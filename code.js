@@ -79,30 +79,30 @@ $(document).ready(function(){
 })
 
 
-// const getWeatherData = async () => {
-//     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e96649321926b6f7c5e48345b1fc8bed`;
+const demo = async () => {
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e96649321926b6f7c5e48345b1fc8bed`;
 
-//     try {
-//         const res = await fetch(weatherUrl);
-//         const data = await res.json();
-//         console.log(data);
+    try {
+        const res = await fetch(weatherUrl);
+        const data = await res.json();
+        console.log(data);
 
-//         const {main, name, weather, wind, sys, dt } = data;
-//         cityName.html(`${name}, ${getCountryName(sys.country)}`);
-//         dateTime.html(`${getDateTime(dt)}`);
-//         w_forcast.html(weather[0].main)
+        const {main, name, weather, wind, sys, dt } = data;
+        cityName.html(`${name}, ${getCountryName(sys.country)}`);
+        dateTime.html(`${getDateTime(dt)}`);
+        w_forcast.html(weather[0].main)
 
-//         W_temperature.html(`${main.temp}&#176`);
-//         W_minTem.html(`Min: ${main.temp_min.toFixed()}&#176`);
-//         W_maxTem.html(`Max: ${main.temp_max.toFixed()}&#176`);
+        W_temperature.html(`${main.temp}&#176`);
+        W_minTem.html(`Min: ${main.temp_min.toFixed()}&#176`);
+        W_maxTem.html(`Max: ${main.temp_max.toFixed()}&#176`);
 
-//         w_feelsLike.html(`${main.feels_like.toFixed(2)}&#176`);
-//         w_humidity.html(`${main.humidity} %`);
-//         w_wind.html(`${wind.speed} m/s`);
-//         w_pressure.html(`${main.pressure} hPa`);
-//         W_icon.html(`<img src="http://openweathermap.org/img/wn/${weather[0].icon}@4x.png" />`);
+        w_feelsLike.html(`${main.feels_like.toFixed(2)}&#176`);
+        w_humidity.html(`${main.humidity} %`);
+        w_wind.html(`${wind.speed} m/s`);
+        w_pressure.html(`${main.pressure} hPa`);
+        W_icon.html(`<img src="http://openweathermap.org/img/wn/${weather[0].icon}@4x.png" />`);
 
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
+    } catch (error) {
+        console.log(error);
+    }
+};
